@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Angular Material Sample</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://rawgit.com/daniel-nagy/md-data-table/master/dist/md-data-table.css">
+
+
+    
+</head>
+
+<body ng-app="employeeApp" ng-cloak>
+    <div ng-controller="AppCtrl" layout="column" style="overflow: hidden;height:100%;">
+        <section layout="row" flex>
+            <md-sidenav class="md-sidenav-left"
+                        md-component-id="left"
+                        md-is-locked-open="$mdMedia('gt-md')"
+                        md-whiteframe="4">
+
+                <md-toolbar class="md-theme-indigo">
+                    <h1 class="md-toolbar-tools">Menu</h1>
+                </md-toolbar>
+                <md-list>
+                    <md-list-item ui-sref="home" ng-click="menuToggle();">
+                        <p style="font-size:14px;">Home</p>
+                    </md-list-item>
+                    <md-list-item ui-sref="employee" ng-click="menuToggle();">
+                        <p style="font-size: 14px;">Employee</p>
+                    </md-list-item>
+
+                </md-list>
+
+            </md-sidenav>
+
+            <md-content flex layout-padding>
+                <ui-view></ui-view>
+            </md-content>
+
+        </section>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="https://rawgit.com/daniel-nagy/md-data-table/master/dist/md-data-table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+
+</body>
+
+</html>

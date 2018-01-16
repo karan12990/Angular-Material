@@ -1,0 +1,60 @@
+﻿<md-content layout-padding>
+    <h1>Add Employee</h1>
+</md-content>
+<md-content layout-padding>
+    <form name="employeeForm">
+        <div layout="row">
+            <md-input-container flex="50">
+                <label>First Name</label>
+                <input md-maxlength="20" required name="firstName" ng-model="employee.EmpModel.firstName">
+                <div ng-messages="employeeForm.firstName.$error">
+                    <div ng-message="required">This is required.</div>
+                    <div ng-message="md-maxlength">First name must be less than 20 characters long.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container flex="50">
+                <label>Last Name</label>
+                <input md-maxlength="20" required name="lastName" ng-model="employee.EmpModel.lastName">
+                <div ng-messages="employeeForm.lastName.$error">
+                    <div ng-message="required">This is required.</div>
+                    <div ng-message="md-maxlength">First name must be less than 20 characters long.</div>
+                </div>
+            </md-input-container>
+
+
+        </div>
+        <div layout="row">
+            <md-input-container flex="50">
+                <label>Gender</label>
+                <md-select name="gender" ng-model="employee.EmpModel.gender" required>
+                    <md-option value="male">Male</md-option>
+                    <md-option value="female">Female</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container flex="50">
+                <label>Email</label>
+                <input required name="email" type="email" ng-model="employee.EmpModel.email">
+                <div ng-messages="employeeForm.email.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+
+        </div>
+        
+        <div layout="row">
+            <md-input-container flex="50">
+                <label>Enter date</label>
+                <md-datepicker ng-model="employee.EmpModel.dateofbirth"></md-datepicker>
+            </md-input-container>
+
+        </div>
+
+
+        <h2>{{employee.EmpModel.email}}</h2>
+        <div>
+            <md-button class="md-raised md-primary" type="submit" ng-click="employee.AddEmployee()">Save</md-button>
+        </div>
+
+    </form>
+</md-content>

@@ -1,0 +1,46 @@
+﻿
+<md-content layout-padding>
+    <h1>Employee List</h1>
+</md-content>
+
+<md-content layout-padding>
+    <md-content laout="column" flex ng-controller="employeeController as employee">
+        <md-card>
+            <md-toolbar class="md-table-toolbar md-default">
+                <div class="md-toolbar-tools">
+                    <span>Employee</span>
+                    <div flex></div>
+                </div>
+            </md-toolbar>
+
+            <md-table-container>
+                <table md-table md-progress="employee.promise">
+                    <thead md-head md-order="employee.query.order">
+                        <tr md-row>
+                            <th md-column md-order-by="firstName"><span>FirstName</span></th>
+                            <th md-column md-order-by="lastName"><span>LastName</span></th>
+                            <th md-column md-order-by="gender"><span>Gender</span></th>
+                            <th md-column md-order-by="email"><span>Email</span></th>
+                            <th md-column><span>Date of Birth</span></th>
+                            <th md-column><span>Action</span></th>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row ng-repeat="emp in employee.employeeList.data | filter: employee.filter.search | orderBy: employee.query.order | limitTo: employee.query.limit : (employee.query.page -1) * employee.query.limit">
+                            <td md-cell hide-gt-xs show-gt-md>{{emp.firstName}}</td>
+                            <td md-cell>{{emp.lastName}}</td>
+                            <td md-cell>{{emp.gender}}</td>
+                            <td md-cell>{{emp.email}}</td>
+                            <td md-cell>{{emp.dateofbirth | date:"dd/MM/yyyy"}}</td>
+                            <td md-cell>
+                                <md-button class="md-raised md-primary" type="submit" ng-click="employee.deleteEmployee(emp.email)">Delete</md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="employee.query.limit" md-limit-options="employee.limitOptions" md-page="employee.query.page" md-total="{{employee.employeeList.count}}"></md-table-pagination>
+
+        </md-card>
+    </md-content>
+</md-content>
