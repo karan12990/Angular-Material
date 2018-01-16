@@ -9,27 +9,15 @@
                 .state("home",
                 {
                     url: "/home",
-                    templateUrl: "templates/home.html",
+                    templateUrl: "Templates/home.html",
                     controller: "homeController"
-                })
-                .state("courses",
-                {
-                    url: "/courses",
-                    templateUrl: "templates/course.html",
-                    controller: "courseController"
                 })
                 .state("employee",
                 {
                     url: "/employee",
-                    templateUrl: "templates/employee.html",
+                    templateUrl: "Templates/employee.html",
                     controller: "employeeController"
                 })
-                .state("students",
-                {
-                    url: "/students",
-                    templateUrl: "templates/student.html",
-                    controller: "studentController"
-                });
 
             $urlRouterProvider.otherwise('/employee');
 

@@ -1,0 +1,20 @@
+﻿html {
+    background: #eee;
+}
+
+body {
+    line-height: 1.4;
+    max-width: 100%;
+    margin: 20px auto;
+}body {
+}
+.menudemoMenuWidth .md-menu-demo {
+    padding: 24px;
+}
+.menudemoMenuWidth .menu-demo-container {
+    min-height: 200px;
+}
+
+.dialogdemoThemeInheritance .container {
+    text-align: center;
+}
